@@ -92,6 +92,9 @@
           </ol>
         </div> 
       </div>
+      <div class="row justify-content-center">
+        <button class="col-4 btn btn-danger my-3" data-bs-toggle="modal" data-bs-target="#testModal">隨堂小測驗</button>
+      </div>
     </div>
     <!-- main picture end -->
     <!-- toolList -->
@@ -135,6 +138,86 @@
         </div>
     </div>
   </div>
+        <!-- 隨堂小測驗 -->
+        <div class="modal fade" id="testModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">隨堂小測驗</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        AI 應用程式可提供個人化的醫療和 X 光判讀。個人健康照護助理可以扮演人生教練的角色，提醒您服藥、運動或吃得更健康。
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        AI 提供虛擬購物的功能，可給予個人化的建議，並且和消費者討論購買選項。庫存管理和站點配置技術，也可透過 AI 改善。
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        AI 可以分析從互聯設備串流傳來的工廠物聯網資料，運用循環式網路來預測預期的負載和需求；循環式網路是一種特定的深度學習網路，搭配序列資料使用。
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        AI 可用來擷取賽事現場的影像，並提供報告給教練，建議如何更理想地規劃比賽，包括配置最佳的場上位置與策略。
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        AI 能透過影像辨識技術，增強車輛辨識、號誌管理、交通安全管理等資訊整合。目前，台灣交通的人工智慧應用，已發展到自駕車、車流計算、路況安全預警、路網優化等領域。
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">察看結果</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel2">測驗結果</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="row">
+    
+                    <img class="col" src="./Picture/picture/AI.png" alt="">
+                    <p class="h4 text-center mb-3">您答對了5題</p>
+                    <p class="h6 text-center mb-3">看樣子您對這個領域了解的不錯哦!!!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <button class="col-3 mx-3 btn btn-outline-secondary" data-bs-target="#testModal" data-bs-toggle="modal">重新測驗</button>
+                    <button class="col-3 mx-3 btn btn-secondary" 
+                    data-bs-toggle="modal">繼續閱讀</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
 
     <!-- 活動說明modal -->
     <div
@@ -238,7 +321,7 @@
               類訊息。</h5>
             <h5>四、個人資料利用之時間、地區、對象及方式：
             </h5>
-            <ul>
+            <ul style="list-style-type:none">
               <li>（一）時間：調查及相關票選活動結束且獎項寄送等後續程序執行完畢。</li>
               <li>（二）地區：僅供本會內部使用。</li>
               <li>（三）對象：執行本活動之受調人員。</li>
@@ -258,7 +341,7 @@
             <h5>七、依據個資法第三條規定，本活動參與者瞭解，就其所提供之個人資料
               得行使下列權利：
             </h5>
-            <ul>
+            <ul style="list-style-type:none">
               <li>（一）得向本公司查詢或請求閱覽、請求製給複製本，惟本公司依法得酌收必要成本費用。
               </li>
               <li>（二）得向本公司請求補充或更正，惟依法本活動參與者應為適當之釋明。
@@ -282,7 +365,7 @@
             >
             Close
           </button>
-          <a href="./recommend.html" class="btn btn-danger">前往推薦</a>
+          <a href="./test_quiz.html" class="btn btn-danger">前往推薦</a>
           </div>
         </div>
       </div>

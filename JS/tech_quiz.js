@@ -149,7 +149,7 @@ const myQuestions = [
     },
     ];
 
-    let anwerCountData = {
+    let answerCountData = {
         aI:'',
         bigData:'',
         blockChain:'',
@@ -162,60 +162,92 @@ function buildQuiz(){
     let str='';
     myQuestions.forEach(function(item,index){
         str += `
-        <div class="card mb-3">
+        <form name="quiz_form" id="quiz_form">
             <img src="${item.imgUrl}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="mt-3">${index+1}. ${item.question}</p>
+            <h4 class="mt-3">${index+1}. ${item.question}</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="${index}" id="flexRadioDefault1" value="1">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="${index}" id="quizRadio ${index} 1" value="1">
+                    <label class="form-check-label" for="quizRadio ${index} 1">
                     ${item.answers.a}
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="${index}" id="flexRadioDefault2" value="2">
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="${index}" id="quizRadio ${index} 2" value="2">
+                    <label class="form-check-label" for="quizRadio ${index} 2">
                     ${item.answers.b}
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="${index}" id="flexRadioDefault1" value="3">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="${index}" id="quizRadio ${index} 3" value="3">
+                    <label class="form-check-label" for="quizRadio ${index} 3">
                     ${item.answers.c}
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="${index}" id="flexRadioDefault2" value="4">
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="${index}" id="quizRadio ${index} 4" value="4">
+                    <label class="form-check-label" for="quizRadio ${index} 4">
                     ${item.answers.d}
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="${index}" id="flexRadioDefault1" value="5">
-                    <label class="form-check-label" for="flexRadioDefault1">
+                    <input class="form-check-input" type="radio" name="${index}" id="quizRadio ${index} 5" value="5">
+                    <label class="form-check-label" for="quizRadio ${index} 5">
                     ${item.answers.e}
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="${index}" id="flexRadioDefault2" value="6">
-                    <label class="form-check-label" for="flexRadioDefault2">
+                    <input class="form-check-input" type="radio" name="${index}" id="quizRadio ${index} 6" value="6">
+                    <label class="form-check-label" for="quizRadio ${index} 6">
                     ${item.answers.f}
                     </label>
                 </div>
-            </div>
-        </div>`;
+            </form>`;
     });
     quizContainer.innerHTML = str;
 };
 
 function answerCount(){
-    
+    // const quizForm = document.getElementById('quiz_form');
+    // for(var i=0; i<quizForm.length;i++){
+    //     if(quizForm[0][i].checked){
+    //         var quizAnswerCount = quizForm[0][i].value;
+    //         alert(quizAnswerCount);
+    //     }
+    // }
+    // 獲取所有answers類的元素
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // 迭代問題
+    myQuestions.forEach((currentQuestion, index) => {
+        //獲取所選的答案
+        const answerContainer = answerContainers[index];
+        const selector = 'input[name=question' + index + ']:checked';
+        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+        // //如果
+        // if (userAnswer === "a") {
+        //     answerData.aI += 1;
+        // }
+        // else if (userAnswer === "b") {
+        //     answerData.bigData += 1;
+        // }
+        // else if (userAnswer === "c") {
+        //     answerData.blockChain += 1;
+        // }
+        // else if (userAnswer === "d") {
+        //     answerData.cloudComputing += 1;
+        // }
+        // else if (userAnswer === "f") {
+        //     answerData.edgeComputing += 1;
+        // }
+        // else if (userAnswer === "g") {
+        //     answerData.fiveG += 1;
+        // }
+    });
+    console.log(answerData);
 }
 
 buildQuiz();
 
 
-submitButton.addEventListener('submit',function(e){
-    e.preventDefault();
-    console.log(submitButton);
-});
+submitButton.addEventListener("click",answerCount())
